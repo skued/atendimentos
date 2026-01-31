@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Atendimentos Pedagógicos • Skued</title>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #f6f7fb;
+      --surface: #fff;
+      --text: #1f2937;
+      --muted-text:#6b7280;
+      --line: #e5e7eb;
+      --brand-2: #0e1726;
+      --link: #0b1736;
+      --link-hover: #ff0077;
+      --radius: 16px;
+      --shadow: 0 12px 28px rgba(0,0,0,0.06);
+      --shadow-hover: 0 16px 36px rgba(0,0,0,0.10);
+      --chip-bg: #fdf6fa;
+      --chip-border:#ff0077;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      font-family:'Exo 2',sans-serif;
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .container{
+      max-width: 1100px;
+      margin: 28px auto;
+      padding: 0 20px 28px;
+    }
+
+    .header{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:12px;
+      margin-bottom: 16px;
+      text-align:center;
+    }
+
+    .logo{
+      width:150px;
+      height:auto;
+      display:block;
+    }
+
+    h1{
+      margin: 0;
+      font-weight:700;
+      font-size: clamp(24px, 4vw, 40px);
+      color: var(--brand-2);
+      letter-spacing:.2px;
+    }
+
+    .subtitle{
+      margin: 0;
+      color: var(--muted-text);
+      font-size: clamp(14px, 2.2vw, 18px);
+      line-height: 1.4;
+      max-width: 760px;
+    }
+
+    .center{
+      display:flex;
+      justify-content:center;
+      margin-top: 26px;
+    }
+
+    .grid{
+      width: 100%;
+      max-width: 920px;
+      display:grid;
+      gap: 18px;
+    }
+
+    @media (min-width: 860px){
+      .grid{ grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .card{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      position: relative;
+      overflow: hidden;
+      min-height: 150px;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:4px;
+      background: linear-gradient(90deg, var(--link), var(--link-hover));
+      opacity:.12;
+    }
+
+    .card:hover{
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+      border-color:#e0e3ea;
+    }
+
+    .chip{
+      align-self:flex-start;
+      background: var(--chip-bg);
+      border-left: 6px solid var(--chip-border);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #a1225b;
+    }
+
+    .title{
+      margin:0;
+      font-size: clamp(18px, 2.2vw, 22px);
+      color: var(--brand-2);
+      line-height: 1.25;
+    }
+
+    a.card-link{
+      text-decoration:none;
+      color: inherit;
+      display:flex;
+      flex-direction:column;
+      gap: 14px;
+      height: 100%;
+      outline: none;
+    }
+
+    a.card-link:focus-visible{
+      outline: 2px solid var(--link-hover);
+      outline-offset: 4px;
+      border-radius: 14px;
+    }
+
+    .disabled{
+      opacity: .75;
+    }
+    .disabled:hover{
+      transform:none;
+      box-shadow: var(--shadow);
+      border-color: var(--line);
+    }
+
+    .footer{
+      margin-top: 28px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 18px;
+      text-align:center;
+      box-shadow: var(--shadow);
+      color: var(--muted-text);
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .footer strong{ color: var(--brand-2); }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <img src="https://skued.com.br/wp-content/uploads/2024/09/skued-02.png" alt="Logo Skued" class="logo" />
+      <h1>Atendimentos Pedagógicos</h1>
+      <p class="subtitle">
+        Escolha a unidade para acessar o ambiente de agendamento e acesso aos atendimentos pedagógicos.
+      </p>
+    </header>
+
+    <div class="center">
+      <main class="grid" aria-label="Seleção de unidade">
+        <!-- Barra -->
+        <article class="card disabled" aria-disabled="true">
+          <span class="chip">Em breve</span>
+          <h2 class="title">Barra</h2>
+        </article>
+
+        <!-- Botafogo e Leblon -->
+        <article class="card">
+          <a class="card-link" href="https://padlet.com/skued/avalia-es-pedag-gicas-botafogo-e-leblon-batjr4s0gcox0kd9" target="_blank" rel="noopener noreferrer">
+            <span class="chip">Acessar</span>
+            <h2 class="title">Botafogo e Leblon</h2>
+          </a>
+        </article>
+
+        <!-- Icaraí -->
+        <article class="card">
+          <a class="card-link" href="https://padlet.com/skued/avalia-es-pedag-gicas-icara-loawm4j85877g8ak" target="_blank" rel="noopener noreferrer">
+            <span class="chip">Acessar</span>
+            <h2 class="title">Icaraí</h2>
+          </a>
+        </article>
+      </main>
+    </div>
+
+    <footer class="footer" aria-label="Rodapé">
+      <strong>Skued</strong> • Atendimentos Pedagógicos
+    </footer>
+  </div>
+</body>
+</html>
