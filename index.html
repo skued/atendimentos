@@ -78,13 +78,13 @@
 
     .grid{
       width: 100%;
-      max-width: 920px;
+      max-width: 700px;
       display:grid;
       gap: 18px;
     }
 
     @media (min-width: 860px){
-      .grid{ grid-template-columns: repeat(3, 1fr); }
+      .grid{ grid-template-columns: repeat(2, 1fr); }
     }
 
     .card{
@@ -92,7 +92,7 @@
       border:1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 20px;
+      padding: 22px;
       display:flex;
       flex-direction:column;
       gap: 14px;
@@ -151,15 +151,6 @@
       border-radius: 14px;
     }
 
-    .disabled{
-      opacity: .75;
-    }
-    .disabled:hover{
-      transform:none;
-      box-shadow: var(--shadow);
-      border-color: var(--line);
-    }
-
     .footer{
       margin-top: 28px;
       background: var(--surface);
@@ -188,17 +179,12 @@
 
     <div class="center">
       <main class="grid" aria-label="Seleção de unidade">
-        <!-- Barra -->
-        <article class="card disabled" aria-disabled="true">
-          <span class="chip">Em breve</span>
-          <h2 class="title">Barra</h2>
-        </article>
 
-        <!-- Botafogo e Leblon -->
+        <!-- Barra, Botafogo e Leblon -->
         <article class="card">
           <a class="card-link" href="https://padlet.com/skued/avalia-es-pedag-gicas-botafogo-e-leblon-batjr4s0gcox0kd9" target="_blank" rel="noopener noreferrer">
             <span class="chip">Acessar</span>
-            <h2 class="title">Botafogo e Leblon</h2>
+            <h2 class="title">Barra, Botafogo e Leblon</h2>
           </a>
         </article>
 
@@ -209,6 +195,7 @@
             <h2 class="title">Icaraí</h2>
           </a>
         </article>
+
       </main>
     </div>
 
